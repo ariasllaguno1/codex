@@ -1,0 +1,48 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f4f4f4;
+}
+
+.hero h1 {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    justify-content: space-around;
+}
+
+.feature {
+    max-width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: #fff;
+}
