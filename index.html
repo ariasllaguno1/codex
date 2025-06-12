@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativa de Bases de Datos en la Nube</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <h1>Comparativa de Bases de Datos en la Nube</h1>
+        <p>Aprende las diferencias entre AWS RDS, AWS Aurora, Firebase RTDB y CloudSQL.</p>
+    </header>
+
+    <section class="chart">
+        <h2>Ejemplo de latencias</h2>
+        <canvas id="latenciaChart" width="400" height="200"></canvas>
+    </section>
+
+    <section class="comparacion">
+        <h2>Comparación General</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Tipo</th>
+                    <th>Escalabilidad</th>
+                    <th>Uso más común</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AWS RDS</td>
+                    <td>Relacional</td>
+                    <td>Alta</td>
+                    <td>Aplicaciones tradicionales</td>
+                </tr>
+                <tr>
+                    <td>AWS Aurora</td>
+                    <td>Relacional</td>
+                    <td>Muy alta</td>
+                    <td>Aplicaciones de gran escala</td>
+                </tr>
+                <tr>
+                    <td>Firebase RTDB</td>
+                    <td>NoSQL</td>
+                    <td>Automática</td>
+                    <td>Apps móviles en tiempo real</td>
+                </tr>
+                <tr>
+                    <td>CloudSQL</td>
+                    <td>Relacional</td>
+                    <td>Alta</td>
+                    <td>Aplicaciones en Google Cloud</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mi Sitio Didáctico. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    const ctx = document.getElementById('latenciaChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['AWS RDS', 'AWS Aurora', 'Firebase RTDB', 'CloudSQL'],
+            datasets: [{
+                label: 'Latencia (ms)',
+                data: [40, 30, 60, 50],
+                backgroundColor: ['#3B82F6', '#34D399', '#FB923C', '#6366F1']
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+</body>
+</html>
