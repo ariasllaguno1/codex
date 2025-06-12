@@ -17,27 +17,31 @@ body {
     font-weight: 700;
 }
 
-.cta {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.features {
-    display: flex;
-    flex-wrap: wrap;
+.chart {
+    max-width: 600px;
+    margin: 0 auto;
     padding: 40px 20px;
-    justify-content: space-around;
 }
 
-.feature {
-    max-width: 300px;
-    text-align: center;
-    margin-bottom: 20px;
+.comparacion {
+    padding: 40px 20px;
+    overflow-x: auto;
+}
+
+.comparacion table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparacion th,
+.comparacion td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.comparacion th {
+    background: #f4f4f4;
 }
 
 footer {

@@ -1,7 +1,7 @@
 # codex
 Repositorio totalmente dedicado a codex
 
-## Landing Page
+## Sitio Didáctico de Bases de Datos
 
-Este repositorio incluye una landing page sencilla para iniciar proyectos web. 
-Abre `index.html` en tu navegador para verla.
+El proyecto contiene una página educativa que compara AWS RDS, AWS Aurora, Firebase RTDB y CloudSQL.
+Abre `index.html` en tu navegador para ver la tabla comparativa y un gráfico de ejemplo.
