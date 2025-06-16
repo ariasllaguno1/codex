@@ -33,6 +33,21 @@ body {
     border-collapse: collapse;
 }
 
+.info-panels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.info-panels .panel {
+    flex: 1 1 200px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background: #fff;
+    border-radius: 4px;
+}
+
 .comparacion th,
 .comparacion td {
     padding: 10px;
@@ -49,4 +64,26 @@ footer {
     padding: 20px;
     background: #222;
     color: #fff;
+}
+
+.test {
+    padding: 40px 20px;
+}
+
+.test label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.test input[type=range] {
+    width: 100%;
+}
+
+.test button {
+    margin-top: 10px;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-weight: bold;
 }

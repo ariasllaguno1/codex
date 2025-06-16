@@ -18,6 +18,25 @@
         <canvas id="latenciaChart" width="400" height="200"></canvas>
     </section>
 
+    <section class="info-panels">
+        <div class="panel">
+            <h3>AWS RDS</h3>
+            <p>Servicio relacional administrado que soporta motores como MySQL y PostgreSQL. Facilita tareas de mantenimiento y copias de seguridad.</p>
+        </div>
+        <div class="panel">
+            <h3>AWS Aurora</h3>
+            <p>Base de datos compatible con MySQL y PostgreSQL optimizada para la nube. Ofrece escalabilidad y rendimiento superiores.</p>
+        </div>
+        <div class="panel">
+            <h3>Firebase RTDB</h3>
+            <p>Base de datos NoSQL en tiempo real, ideal para apps móviles que requieren sincronización inmediata de datos.</p>
+        </div>
+        <div class="panel">
+            <h3>CloudSQL</h3>
+            <p>Servicio relacional gestionado en Google Cloud que soporta MySQL, PostgreSQL y SQL Server con integración nativa a otros servicios de la plataforma.</p>
+        </div>
+    </section>
+
     <section class="comparacion">
         <h2>Comparación General</h2>
         <table>
@@ -58,6 +77,29 @@
         </table>
     </section>
 
+    <section class="test">
+        <h2>Test de Selección de Base de Datos</h2>
+        <form id="dbTest">
+            <label for="sql">¿Necesitas compatibilidad con SQL?</label>
+            <select id="sql">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="escala">Nivel de escalabilidad requerida</label>
+            <input type="range" id="escala" min="1" max="10" value="5">
+
+            <label for="plataforma">Plataforma principal</label>
+            <select id="plataforma">
+                <option value="aws">AWS</option>
+                <option value="gcp">Google Cloud</option>
+            </select>
+
+            <button type="button" id="recomendar">Recomendar DB</button>
+        </form>
+        <div id="resultado"></div>
+    </section>
+
     <footer>
         <p>&copy; 2024 Mi Sitio Didáctico. Todos los derechos reservados.</p>
     </footer>
@@ -83,6 +125,26 @@
                 }
             }
         }
+    });
+
+    document.getElementById('recomendar').addEventListener('click', function() {
+        const necesitaSql = document.getElementById('sql').value;
+        const escala = parseInt(document.getElementById('escala').value, 10);
+        const plataforma = document.getElementById('plataforma').value;
+
+        let recomendacion = '';
+
+        if (necesitaSql === 'no') {
+            recomendacion = 'Firebase RTDB';
+        } else {
+            if (plataforma === 'aws') {
+                recomendacion = escala >= 7 ? 'AWS Aurora' : 'AWS RDS';
+            } else {
+                recomendacion = 'CloudSQL';
+            }
+        }
+
+        document.getElementById('resultado').textContent = 'Recomendación: ' + recomendacion;
     });
     </script>
 </body>
